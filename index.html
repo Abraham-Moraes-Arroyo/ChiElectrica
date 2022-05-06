@@ -1,1 +1,154 @@
 
+<!-- Electrician Webpage-->
+
+<!doctype html>
+<html lang="en">
+
+
+<head> 
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+     crossorigin="anonymous">
+
+
+    <title> Enrique Electric</title>
+
+    <!-- This makes sure that all of the screens are not seen when user loads page -->
+    <style>
+        .screen {
+            display: none;
+        }
+
+        .facebook {
+            padding: 20px;
+        }
+    </style>
+     <!-- This is to hide the template for the search section CARDS -->
+
+<style>
+    .template {
+        display: none;
+    }
+
+</style>
+
+</head>
+<body>
+
+    <!-- The following is what makes the different screens to be placed
+    think of them as seperate screens of information, but access only 
+    when clicked on  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav"> <!--Think of that as your topnav -->
+          <a data-screen="home" class="nav-item nav-link" >Home</a>
+          <a data-screen="form" class="nav-item nav-link" >Prices</a>
+            
+        </div>
+      </div>
+      <!-- the original screens where placed here-->
+    </nav>
+    <!--Here is where I am going to put the screens -->
+    <div id="content">
+
+
+<!-- Here is where the top button code is going to be placed just to avoid having it pop up to a column -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+<!-- here is where I am going to be dropping the different pages/ screens -->
+
+
+<!-- this is the home screen -->
+    <div class="screen" id="home">
+        <p>This is the home page</p>
+    </div>
+
+
+<!-- above is the end of the home screen -->
+
+
+
+<!-- Another screen where you are going to be posting the study 
+content that you are going to be posting online -->
+    <div class="screen" id="form">
+        
+    </div>
+<!-- Yeah, basically of the highlights are going to be here   -->
+
+<!-- 
+// this is the layout of the cards 
+<div class="card bg-light mb-3" style="max-width: 31rem;">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              
+                
+            </p>
+          </div>
+        </div>
+
+
+ -->
+
+
+
+
+</body>
+<!-- Here is where the typescript is going to be, that makes the screens visible-->
+<script>
+    // This will make sure that the home screen is always being shown 
+    document.querySelector("#home").style.display= "block";
+
+    let navAnchors= document.querySelectorAll("div#navbarNavAltMarkup a")
+
+    navAnchors.forEach( (anchor) => {
+      anchor.addEventListener("click", (event) => {
+
+        //hides all the screens first
+        document.querySelectorAll(".screen").forEach( (screen) => {
+          screen.style.display = "none";
+        });
+        //read data screen attribute  
+        let screen = event.target.getAttribute("data-screen");
+
+        //find relevant screen
+        let targetScreen= document.querySelector("#" + screen);
+
+        //show it 
+        targetScreen.style.display= "block";
+      })
+    })
+
+
+
+    // the top button
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    }
+  </script>
+</html>
