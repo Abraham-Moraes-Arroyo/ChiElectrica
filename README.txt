@@ -12,6 +12,5 @@ https://www.w3schools.com/
 
 The web page is very simple, and it doesn't have any of CSS. Rather it has mostly typescript
 
-If any of the webpage that I have created utilizing template code and code of my own interests any of you, you 
-are allowed to utilize it, but you can not make any profit out of the code/ creation. 
+Licensed under the MIT License 
 Have a nice rest of your day, and be safe.
